@@ -41,4 +41,16 @@ describe('Service: Cellautomation', function () {
       expect(Cellautomation.getNextState(rule)).toBe(ruleList[rule]);
     }
   });
+
+  it('should begin at generation 1', function() {
+      expect(Cellautomation.getGenerationTick()).toBe(1);
+  });
+
+  it('should keep track of generations', function() {
+      Cellautomation.generationTick();
+      Cellautomation.generationTick();
+      Cellautomation.generationTick();
+
+      expect(Cellautomation.getGenerationTick()).toBe(4);
+  });
 });

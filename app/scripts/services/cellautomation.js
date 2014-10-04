@@ -22,6 +22,8 @@ angular.module('cellularAutomationApp')
             '000': 0
         };
 
+        this.generation = 1;
+
         this.setRules = function(rules) {
             this.rules = rules;
         };
@@ -34,4 +36,11 @@ angular.module('cellularAutomationApp')
             return left.toString() + target.toString() + right.toString();
         };
 
+        this.generationTick = function () {
+            this.generation++;
+        };
+
+        this.getGenerationTick = function() {
+            return this.generation;
+        };
   });
