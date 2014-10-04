@@ -23,15 +23,15 @@ angular.module('cellularAutomationApp')
         };
 
         this.setRules = function(rules) {
-            if ( !rules.isArray() || rules.length !== 8) {
-                throw new Error('Rules must be an array of length 8');
-            }
-
             this.rules = rules;
         };
 
         this.getNextState = function(currentPattern) {
             return this.rules[currentPattern];
+        };
+
+        this.getPatternForValues = function (left, target, right) {
+            return left.toString() + target.toString() + right.toString();
         };
 
   });
