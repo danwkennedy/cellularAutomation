@@ -5,6 +5,11 @@
             <label for="{{rule}}" style="display: block;">{{rule}}</label>
             <input name="{{rule}}" id="{{rule}}" ng-model="rules[rule]" ng-checked="rules[rule] == 1" ng-true-value="1" ng-false-value="0" type="checkbox" />
         </div>
+        <div class="form-group">
+            <select ng-model="rules" ng-options="option.rules as option.name for option in ruleOptions" style="margin-top: 24px;">
+                <option value="">-- Choose rule --</option>
+            </select>
+        </div>
     </div>
     <div style="margin-top: 20px;">
         <span class="btn btn-success" ng-click="generation = generation + 1" ng-init="0">Next Generation</span>
