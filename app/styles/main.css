@@ -42,13 +42,19 @@ body {
 }
 
 /* Main marketing message and sign up button */
+
+.rules {
+    margin-right: 10px;
+}
+
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+
+.jumbotron.options {
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 /* Supporting marketing content */
@@ -57,6 +63,23 @@ body {
 }
 .marketing p + h4 {
   margin-top: 28px;
+}
+
+.generation {
+    height: 10px;
+    margin-bottom: 1px;
+}
+
+.cell {
+    display: inline-block;
+    border: solid 1px #333;
+    height: 10px;
+    width: 10px;
+    margin-right: 1px;
+}
+
+.cell.active {
+    background: #333;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -75,5 +98,10 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  .container .jumbotron {
+      padding-left: 20px;
+      padding-right: 20px;
   }
 }

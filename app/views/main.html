@@ -1,23 +1,19 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div class="jumbotron options" style="text-align: left">
+    <h4>Rules</h4>
+    <div class="form form-inline">
+        <div class="form-group rules" ng-repeat="rule in ruleLabels">
+            <label for="{{rule}}" style="display: block;">{{rule}}</label>
+            <input name="{{rule}}" id="{{rule}}" ng-model="rules[rule]" ng-checked="rules[rule] == 1" ng-true-value="1" ng-false-value="0" type="checkbox" />
+        </div>
+    </div>
+    <div style="margin-top: 20px;">
+        <span class="btn btn-success" ng-click="generation = generation + 1" ng-init="0">Next Generation</span>
+        <span class="btn btn-danger" ng-click="resetBoard()">Reset board</span>
+    </div>
+
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<div class="jumbotron">
+    <span class="directions">Click on a cell to toggle its state</span>
+    <div ng-repeat="generation in generations track by $index" generation="generation"></div>
 </div>
