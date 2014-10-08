@@ -351,6 +351,23 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    // Build controls
+    buildcontrol: {
+        options: {
+            dir: 'dist',
+            commit: true,
+            push: true,
+            message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+        },
+        heroku: {
+            options: {
+                remote: 'git@heroku.com:cellular-automation.git',
+                branch: 'master',
+                tag: '1.0.0'
+            }
+        }
     }
   });
 
