@@ -58,7 +58,7 @@
   },
   "scripts": {
     "test": "grunt test",
-    "presart": "grunt build",
-    "start": "grunt connect:dist:keepalive"
+    "presart": "./node_modules/grunt/.bin/grunt build",
+    "start": "./node_modules/grunt/.bin/grunt connect:dist:keepalive"
   }
 }
