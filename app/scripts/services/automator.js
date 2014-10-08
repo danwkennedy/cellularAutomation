@@ -8,21 +8,21 @@
  * Service in the cellularAutomationApp.
  */
 angular.module('cellularAutomationApp')
-  .service('Cellautomation', function Cellautomation() {
+  .service('Automator', function Automator() {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
         this.rules = {
             '111': 0,
             '110': 0,
             '101': 0,
-            '100': 0,
-            '011': 0,
-            '010': 0,
-            '001': 0,
+            '100': 1,
+            '011': 1,
+            '010': 1,
+            '001': 1,
             '000': 0
         };
 
-        this.generation = 1;
+        this.generation = 0;
 
         this.setRules = function(rules) {
             this.rules = rules;
@@ -33,14 +33,10 @@ angular.module('cellularAutomationApp')
         };
 
         this.getPatternForValues = function (left, target, right) {
-            return left.toString() + target.toString() + right.toString();
-        };
+            left = left ? left.toString() : '0';
+            right = right ? right.toString() : '0';
+            target = target.toString();
 
-        this.generationTick = function () {
-            this.generation++;
-        };
-
-        this.getGenerationTick = function() {
-            return this.generation;
+            return left + target + right;
         };
   });
