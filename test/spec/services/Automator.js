@@ -51,16 +51,4 @@ describe('Service: Automator', function () {
       expect(Automator.getNextState(rule)).toBe(ruleList[rule]);
     }
   });
-
-  it('should begin at generation 0', function() {
-      expect(Automator.getGenerationTick()).toBe(0);
-  });
-
-  it('should keep track of generations', function() {
-      Automator.generationTick();
-      Automator.generationTick();
-      Automator.generationTick();
-
-      expect(Automator.getGenerationTick()).toBe(4);
-  });
 });
